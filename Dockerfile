@@ -1,13 +1,16 @@
+LABEL org.opencontainers.image.source https://github.com/excalq/arthurk.com
+
 # Larger Debian-based Rust prebuilder image
 FROM rust as builder
 WORKDIR /app
 COPY Cargo* /app/
 COPY src /app/src/
-RUN cargo install --path .
+RUN rustup target add x86_64-unknown-linux-musl
+RUN cargo install --target x86_64-unknown-linux-musl --path .
 
-# :latest as of Dec 2023
-FROM busybox:1.35.0-glibc
-RUN mkdir -p /srv/arthurk.com/
+FROM scratch
 COPY --from=builder /usr/local/cargo/bin/webserver /srv/webserver
-ADD *.html *.css *.jpg /srv/arthurk.com/
+ADD *.html *.css *.jpg /srv/
+USER 1000
+WORKDIR /srv
 CMD ["/srv/webserver"]

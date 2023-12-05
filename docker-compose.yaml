@@ -1,0 +1,6 @@
+services:
+  arthurk_com:
+    image: arthurk.com:latest
+    ports:
+      - "3001:8080"
+    restart: always

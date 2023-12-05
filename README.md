@@ -2,7 +2,7 @@
 
 This contains the HTML source, as well as the webserver and Dockerfile for my complete website.
 
-Note that these are all intentionally very minimal.
+Note that these are all intentionally very minimal, in the aim of learning Rust.
 
 ## Attribution
 

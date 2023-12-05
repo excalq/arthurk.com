@@ -10,4 +10,4 @@ FROM busybox:1.35.0-glibc
 RUN mkdir -p /srv/arthurk.com/
 COPY --from=builder /usr/local/cargo/bin/webserver /srv/webserver
 ADD *.html *.css *.jpg /srv/arthurk.com/
-CMD ["./webserver"]
+CMD ["/srv/webserver"]

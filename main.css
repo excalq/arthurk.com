@@ -1,0 +1,27 @@
+
+html { 
+  background: url('night-sky.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body * {
+  color: white;
+}
+
+body h1,h2,h3, p, ul {
+    font-family: "roboto", "sans";
+  display: table; /* keep the background color wrapped tight */
+  background-color: rgb(0 0 0 / 60%);
+}
+
+dt {
+  font-weight: bold;
+}
+
+#vim a {
+  text-decoration: none;
+  background-position: initial;
+}

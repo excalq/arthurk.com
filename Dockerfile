@@ -1,7 +1,6 @@
-LABEL org.opencontainers.image.source https://github.com/excalq/arthurk.com
-
 # Larger Debian-based Rust prebuilder image
 FROM rust as builder
+LABEL org.opencontainers.image.source https://github.com/excalq/arthurk.com
 WORKDIR /app
 COPY Cargo* /app/
 COPY src /app/src/
